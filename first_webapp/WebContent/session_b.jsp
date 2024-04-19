@@ -1,15 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <% request.setCharacterEncoding("UTF-8"); %>
-<% String username = (String)request.getSession().getAttribute("username"); %>
 
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <meta charset="ISO-8859-1">
+        <meta charset="UTF-8">
         <title>Insert title here</title>
     </head>
     <body>
-        <h1>こんにちは、<%= username %>さん</h1>
+        <h1>こんにちは、<c:out value="${sessionScope.username}" />さん</h1>
         <p><a href="session_c.jsp">つぎのページへ</a></p>
 
     </body>
